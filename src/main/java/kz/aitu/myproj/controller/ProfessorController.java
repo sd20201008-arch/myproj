@@ -27,10 +27,6 @@ public class ProfessorController {
         return service.create(professor);
     }
 
-    @GetMapping("/by-course/{course}")
-    public List<Professor> getByCourse(@PathVariable String course) {
-        return service.getByCourse(course);
-    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Professor>  update(@PathVariable Integer id, @RequestBody Professor professor) {

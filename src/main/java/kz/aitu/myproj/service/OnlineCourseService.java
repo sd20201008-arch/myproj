@@ -33,7 +33,7 @@ public OnlineCourse getById(Integer id){
 
 
     public OnlineCourse update(Integer id, OnlineCourse newData) {
-        OnlineCourse old = getByid(id);
+        OnlineCourse old = getById(id);
         old.setCourseName(newData.getCourseName());
         old.setCourseAvailable(newData.getCourseAvailable());
         return repo.save(old);

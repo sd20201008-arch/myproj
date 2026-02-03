@@ -11,20 +11,22 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Professor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "professor_id")
     private Integer id;
 
     @Column(name = "professor_name")
-    private String name;
+    private String professorName;
 
     @Column(name = "professor_course")
-    private String course;
+    private String professorCourse;
 
     @Column(name = "professor_age")
-    private Integer age;
+    private Integer professorAge;
+
+    @ManyToOne
+    @JoinColumn(name = "uni_id")
+    private University university;
 }

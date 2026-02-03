@@ -1,6 +1,7 @@
 package kz.aitu.myproj.service;
 
 import kz.aitu.myproj.entity.Professor;
+import kz.aitu.myproj.entity.University;
 import kz.aitu.myproj.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,17 +24,16 @@ public class ProfessorService {
         return repo.save(professor);
     }
 
-    public List<Professor> getByCourse(String course) {
-        return repo.findByCourse(course);
-    }
 
     public Professor update(Integer id, Professor newData) {
         Professor existing = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("prof not found"));
 
-        existing.setName(newData.getName());
-        existing.setCourse(newData.getCourse());
-        existing.setAge(newData.getAge());
+        existing.setProfessorName(newData.getProfessorName());
+        existing.setProfessorCourse(newData.getProfessorCourse());
+        existing.setProfessorAge(newData.getProfessorAge());
+        existing.setUniversity(newData.getUniversity());
+
 
         return repo.save(existing);
     }

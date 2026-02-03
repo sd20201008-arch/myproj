@@ -22,7 +22,8 @@ public class UniversityService {
     public University create(University university) {
         return repo.save(university);
     }
-   public University update(Integer id, University newData) {
+
+    public University update(Integer id, University newData) {
        University existing = repo.findById(id)
                .orElseThrow(() -> new RuntimeException("uni not found"));
                 existing.setId(newData.getId());

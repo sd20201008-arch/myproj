@@ -20,4 +20,12 @@ public abstract class Course {
     @Column(name = "courseavailable")
     private Boolean courseAvailable;
 
+    @ManyToOne
+    @JoinColumn(name = "uni_id")
+    private University university;
+
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
+
 }
