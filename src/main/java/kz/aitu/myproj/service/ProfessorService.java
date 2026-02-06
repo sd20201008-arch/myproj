@@ -32,7 +32,7 @@ public class ProfessorService {
         existing.setProfessorName(newData.getProfessorName());
         existing.setProfessorCourse(newData.getProfessorCourse());
         existing.setProfessorAge(newData.getProfessorAge());
-        existing.setUniversity(newData.getUniversity());
+
 
 
         return repo.save(existing);

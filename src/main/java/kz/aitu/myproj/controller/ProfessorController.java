@@ -39,4 +39,4 @@ public class ProfessorController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
-}
+}-+6
